@@ -1,4 +1,4 @@
-package com.cursoM.spring.service.impl;
+package com.cursoM.spring.service;
 
 import org.springframework.stereotype.Service;
 
