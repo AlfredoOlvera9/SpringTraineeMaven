@@ -31,4 +31,31 @@ public class PersonaController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(personaService.saveDto(persona));
     }
+    @GetMapping("buscar-persona/{id}")
+    public Persona buscarPersonaID(@PathVariable Long id){
+
+        return personaService.buscarPersonaId(id);
+
+    }
+    @DeleteMapping("/eliminar/{id}")
+
+    public void eliminarPersona(@PathVariable Long id){
+
+        personaService.eliminarPersona(id);
+
+    }
+    @GetMapping("/buscar-genero/{genero}")
+    public List<String> getNombrePersonaByGenero(@PathVariable String genero){
+
+        return personaService.getNombrePersonaByGenero(genero);
+
+    }
+
+    @GetMapping("/info/{id}")
+    public ResponseEntity<Object> getInfoPersona(@PathVariable Integer id){
+
+        return personaService.getInfoPersona(id);
+
+    }
+
 }
